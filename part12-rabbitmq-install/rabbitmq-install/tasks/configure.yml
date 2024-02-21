@@ -31,6 +31,21 @@
     durable: yes
     state: present
 
+- name: Install Python3 pip
+  apt:
+    name: python3-pip
+    state: present
+
+- name: Install pika library
+  pip:
+    name: pika
+    state: present
+
+- name: Copy a sample file
+  ansible.builtin.copy:
+    src: "../test.txt"
+    dest: "{{ first_vhost }}"
+
 - name: Publish an image to the defined queue
   rabbitmq_publish:
     url: "amqp://{{ rabbitmq_username }}:{{ rabbitmq_password }}@localhost:5672/{{ first_vhost }}"
@@ -47,3 +62,4 @@
     read_priv: .*
     write_priv: .*
     state: absent
+
