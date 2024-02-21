@@ -10,5 +10,5 @@
   when: ansible_distribution == "Ubuntu"
   ignore_errors: True
 
-- name: set shekan
-  include: shekan.yml
+  #- name: set shekan
+  #include: shekan.yml
