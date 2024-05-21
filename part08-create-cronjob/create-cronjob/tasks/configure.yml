@@ -1,3 +1,11 @@
+- name: Copy sh file to the remote server
+  ansible.builtin.copy:
+    src: ../files/check-memory.sh
+    dest: /home/kia/check-memory.sh
+- name: Make the script executable
+  ansible.builtin.file:
+    path: /home/kia/check-memory.sh
+    mode: '0755'
 - name: Install cronjob
   cron:
     name: Check host memory
