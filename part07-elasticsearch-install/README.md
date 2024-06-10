@@ -1,9 +1,7 @@
 Systems Ansible
 ===============
 
-
 Simple ansible configuration of base systems accorss different environments.
-
 
 Examples
 --------
