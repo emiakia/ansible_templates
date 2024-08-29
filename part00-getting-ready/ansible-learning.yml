@@ -6,7 +6,7 @@
   tasks:
     - name: Create account
       user:
-        name: devops
+        name: kia
         # set bash as default shell for user.
         shell: /bin/bash
 
@@ -20,7 +20,7 @@
 
     - name: ssh key
       authorized_key:
-        user: devops
+        user: kia
         state: present
         manage_dir: yes
         # Adding ssh_key of a user whi is running playbook.

@@ -4,4 +4,25 @@
     state: present
 
 - name: Manage Docker as a non-root user
-  shell: sudo usermod -aG docker test-docker
+  become: yes
+  become_method: sudo
+  become_user: root
+  shell: usermod -aG docker test-docker
+
+
+# - hosts: all
+#   become: yes
+#   become_method: sudo
+#   become_user: root
+#   tasks:
+#     - name: Create user
+#       user:
+#         name: test-docker
+#         state: present
+
+#     - name: Manage Docker as a non-root user
+#       user:
+#         name: test-docker
+#         groups: docker
+#         append: yes
+

@@ -1,8 +1,7 @@
 galaxy_info:
-  author: Masoud Maghsoudi
+  author: Emran
   description: Update Linux machine
   license: MIT
-
   min_ansible_version: 2.1
 
   platforms:
@@ -17,7 +16,6 @@ galaxy_info:
     - yum
 
 dependencies:
-  - apt
-  - apt-get
-  - dnf
-  - yum
+  # List other roles that this role depends on, for example:
+  # - { role: common, src: git://github.com/example/common.git }
+
